@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Uso — Sergio Augusto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141B22;
+    --paper:#E7E7E1;
+    --paper-raised:#F1F1EC;
+    --line:rgba(20,27,34,0.16);
+    --line-strong:rgba(20,27,34,0.32);
+    --brass:#9C6B1F;
+    --teal:#2E6467;
+    --muted:#5B6470;
+    --focus:#2E6467;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#E9E8E2;
+      --paper:#12171C;
+      --paper-raised:#182027;
+      --line:rgba(233,232,226,0.14);
+      --line-strong:rgba(233,232,226,0.30);
+      --brass:#D3A34C;
+      --teal:#5FA6A9;
+      --muted:#8B95A0;
+      --focus:#5FA6A9;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E9E8E2;
+    --paper:#12171C;
+    --paper-raised:#182027;
+    --line:rgba(233,232,226,0.14);
+    --line-strong:rgba(233,232,226,0.30);
+    --brass:#D3A34C;
+    --teal:#5FA6A9;
+    --muted:#8B95A0;
+    --focus:#5FA6A9;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--brass); color:var(--paper);}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+  .grid-field{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px; opacity:0.5;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 85%);
+  }
+  header, main, footer{position:relative; z-index:1;}
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 28px; max-width:760px; margin:0 auto;
+  }
+  .mark{
+    display:flex; align-items:center; gap:10px;
+    font-family:"IBM Plex Mono", monospace; font-size:13px; letter-spacing:0.02em; color:var(--muted);
+    text-decoration:none;
+  }
+  .mark svg{width:20px; height:20px; flex:none; color:var(--ink);}
+  .back-link{
+    display:inline-flex; align-items:center; gap:7px; text-decoration:none;
+    font-size:13.5px; color:var(--muted); transition:color .15s ease;
+  }
+  .back-link:hover{ color:var(--brass); }
+  .back-link svg{ width:14px; height:14px; }
+
+  main{ padding:20px 0 90px; }
+  .doc-head{ border-bottom:1px solid var(--line); padding-bottom:34px; margin-bottom:44px; }
+  .kicker{ font-family:"IBM Plex Mono", monospace; font-size:12.5px; color:var(--teal); margin:0 0 14px; }
+  h1{
+    font-family:"Fraunces", Georgia, serif; font-weight:500;
+    font-size:clamp(2rem, 4.4vw, 2.7rem); line-height:1.1; letter-spacing:-0.01em;
+    margin:0 0 14px;
+  }
+  .updated{ font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--muted); }
+
+  .doc-body h2{
+    font-family:"Fraunces", Georgia, serif; font-weight:500; font-size:1.35rem;
+    margin:48px 0 14px; letter-spacing:-0.005em;
+  }
+  .doc-body h2 .num{ color:var(--brass); font-family:"IBM Plex Mono", monospace; font-size:0.85rem; margin-right:10px; }
+  .doc-body p{ font-size:1rem; line-height:1.75; color:var(--ink); margin:0 0 16px; max-width:66ch; }
+  .doc-body ul{ margin:0 0 16px; padding-left:22px; }
+  .doc-body li{ font-size:1rem; line-height:1.7; color:var(--ink); margin-bottom:8px; max-width:62ch; }
+  .doc-body strong{ font-weight:600; }
+  .doc-body a.inline-link{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+  .callout{
+    border:1px solid var(--line-strong); border-left:3px solid var(--brass);
+    background:var(--paper-raised); padding:16px 20px; border-radius:2px;
+    font-size:0.95rem; line-height:1.6; color:var(--muted); margin:0 0 16px;
+  }
+
+  footer{
+    background:#141B22; color:rgba(236,235,229,0.55);
+    padding:26px 0 40px; font-family:"IBM Plex Mono", monospace; font-size:11.5px;
+  }
+  footer .wrap{ max-width:760px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  footer a{ text-decoration:none; color:rgba(231,231,225,0.75); transition:color .15s ease; }
+  footer a:hover{ color:#D3A34C; }
+</style>
+</head>
+<body>
+<div class="grid-field" aria-hidden="true"></div>
+<header>
+  <div class="topbar">
+    <a class="mark" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20L12 4l9 16" stroke-linejoin="round"/><path d="M8.5 14h7"/></svg>
+      Sergio Augusto
+    </a>
+    <a class="back-link" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Voltar ao início
+    </a>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="doc-head">
+      <p class="kicker">Documento legal</p>
+      <h1>Termos de Uso</h1>
+      <p class="updated">Última atualização: setembro de 2026</p>
+    </div>
+    <div class="doc-body">
+
+      <p>Estes Termos de Uso regulam a navegação neste site institucional de Sergio Augusto, engenheiro de software. Ao acessar este site, você concorda com as condições descritas abaixo.</p>
+
+      <h2><span class="num">01</span>Aceitação dos termos</h2>
+      <p>O uso deste site implica concordância integral com estes Termos de Uso e com a <strong>Política de Privacidade</strong>. Caso não concorde, recomenda-se não continuar a navegação.</p>
+
+      <h2><span class="num">02</span>Natureza do conteúdo</h2>
+      <p>As informações apresentadas neste site — serviços, processo de trabalho e formas de contato — têm caráter <strong>informativo</strong>. Elas não constituem, por si só, um contrato de prestação de serviços. Qualquer projeto só é formalizado após conversa direta e acordo específico entre as partes.</p>
+
+      <h2><span class="num">03</span>Uso permitido</h2>
+      <ul>
+        <li>Este site pode ser acessado livremente para fins de consulta e contato profissional.</li>
+        <li>Não é permitido copiar, reproduzir ou redistribuir o conteúdo, design ou código deste site para fins comerciais sem autorização.</li>
+        <li>É proibido usar este site para qualquer atividade ilegal ou que comprometa sua segurança ou disponibilidade.</li>
+      </ul>
+
+      <h2><span class="num">04</span>Propriedade intelectual</h2>
+      <p>Os textos, o design e a identidade visual deste site pertencem a Sergio Augusto. O uso não autorizado desse conteúdo pode ser contestado nos termos da legislação aplicável.</p>
+
+      <h2><span class="num">05</span>Links para terceiros</h2>
+      <p>Este site contém links para WhatsApp, Instagram e Facebook. Sergio Augusto não é responsável pelo conteúdo, políticas ou funcionamento dessas plataformas de terceiros.</p>
+
+      <h2><span class="num">06</span>Limitação de responsabilidade</h2>
+      <p>Este site é mantido com o maior cuidado possível, mas não há garantia de disponibilidade ininterrupta ou de ausência total de erros. Sergio Augusto não se responsabiliza por danos decorrentes do uso ou da impossibilidade de uso deste site.</p>
+
+      <h2><span class="num">07</span>Alterações nestes termos</h2>
+      <p>Estes termos podem ser atualizados a qualquer momento, sem aviso prévio, para refletir mudanças no site ou nos serviços oferecidos. A data no topo desta página indica a última revisão.</p>
+
+      <h2><span class="num">08</span>Legislação aplicável</h2>
+      <p>Estes termos são regidos pela legislação brasileira. Eventuais controvérsias serão submetidas ao foro da comarca de Parobé, Rio Grande do Sul.</p>
+
+      <h2><span class="num">09</span>Contato</h2>
+      <p>Dúvidas sobre estes termos podem ser enviadas para <a class="inline-link" href="https://wa.me/5551996237698" target="_blank" rel="noopener">(51) 99623-7698</a> ou pelo Instagram <a class="inline-link" href="https://instagram.com/eu.sou.augusto" target="_blank" rel="noopener">@eu.sou.augusto</a>.</p>
+
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>SERGIO AUGUSTO © 2026</span>
+    <span>PAROBÉ, RS — BRASIL</span>
+  </div>
+</footer>
+</body>
+</html>
